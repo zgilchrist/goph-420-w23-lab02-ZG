@@ -85,7 +85,6 @@ def root_secant_modified(x0, x1, f, eps_s = 1e-8):
 
         eps_a = np.abs(x1 - x0)
         eps_a_arr = np.append(eps_a_arr,eps_a)
-        print(x1)
         k += 1
     return x1, k, eps_a_arr
 
