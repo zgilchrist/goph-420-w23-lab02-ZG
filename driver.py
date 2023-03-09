@@ -13,6 +13,7 @@ def main():
     beta2 = 3200
     H = 4000
     f=1
+    #f=range(0.1,10,.1)
 
     love_fn = lambda x: rho2 / rho1 * np.sqrt(H**2 * (beta1**-2 - beta2**-2) - x**2) / x - np.tan(2*np.pi*f*x)
 
@@ -29,6 +30,8 @@ def main():
 def love(x,f):
     return None
 
+def love_prime(x,f):
+     return None
 
 if __name__ == "__main__":
         main()
