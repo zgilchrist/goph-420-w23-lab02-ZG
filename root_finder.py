@@ -1,8 +1,8 @@
 import numpy as np
-from scipy.optimize import fsolve
 
 
-def root_newton_raphson(x0, f, dfdx, eps_s = 1e-8):
+
+def root_newton_raphson(x0, f, dfdx, freq, eps_s = 1e-8):
     """Finds a root of a function using the Newton-Raphson Method
     
     Parameters
@@ -36,7 +36,7 @@ def root_newton_raphson(x0, f, dfdx, eps_s = 1e-8):
     eps_a_arr = np.zeros(0)
 
     while eps_a > eps_s:
-        dx = -f(xk) / dfdx(xk)
+        dx = -f(xk,freq) / dfdx(xk,freq)
         xk += dx
         eps_a = np.abs(dx/xk)
         eps_a_arr = np.append(eps_a_arr,eps_a)
